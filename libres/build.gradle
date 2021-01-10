@@ -1,0 +1,7 @@
+apply from: "${rootProject.rootDir}/buildConfig/config.gradle"
+libConfig project
+
+dependencies {
+    api androidDeps.appcompat
+    api androidDeps.material
+}

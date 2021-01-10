@@ -1,0 +1,6 @@
+include ':libcmm'
+include ':libres'
+include ':wandroid'
+include ':gank'
+include ':app'
+rootProject.name = "LirE"

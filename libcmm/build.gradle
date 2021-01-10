@@ -1,0 +1,36 @@
+apply from: "${rootProject.rootDir}/buildConfig/config.gradle"
+libConfig project
+
+android {
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    api androidDeps.kt_stdlib
+    api androidDeps.core_ktx
+     implementation androidDeps.appcompat
+    api androidDeps.recyclerView
+    api androidDeps.activity_ktx
+    api androidDeps.fragment_ktx
+    api androidDeps.lifecycle
+    api androidDeps.lifecycle_viewmodel
+    api androidDeps.lifecycle_livedata
+
+    api thirdDeps.retrofit
+    implementation thirdDeps.moshi_converter
+
+    implementation thirdDeps.coil
+    implementation (thirdDeps.glide) {
+        exclude  group : 'androidx.fragment', module : 'fragment'
+    }
+    kapt thirdDeps.glide_kapt
+
+
+
+}

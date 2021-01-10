@@ -1,0 +1,28 @@
+apply from: "${rootProject.rootDir}/buildConfig/config.gradle"
+moduleConfig project
+
+android {
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation androidDeps.kt_stdlib
+    implementation androidDeps.core_ktx
+    implementation project(':libres')
+    implementation project(':libcmm')
+
+    implementation androidDeps.constraintLayout
+    implementation androidDeps.swipeRefresh
+    implementation androidDeps.viewPager2
+
+    implementation androidDeps.navigation_fragment
+    implementation androidDeps.navigation_ui
+
+    implementation androidDeps.paging
+}

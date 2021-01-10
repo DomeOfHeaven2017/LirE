@@ -1,0 +1,143 @@
+apply from: "${rootProject.rootDir}/buildConfig/deps.gradle"
+
+project.ext {
+
+    //debug
+    isApplication = true
+
+    //App配置
+    appConfig = {
+        app ->
+            app.apply plugin: 'com.android.application'
+            app.apply plugin: 'kotlin-android'
+            app.apply plugin:  'kotlin-kapt'
+            app.description "app"
+            appDefaultConfig app.android
+            dependenciesConfig app.dependencies
+    }
+
+
+    //lib库配置
+    libConfig = {
+        lib ->
+            lib.apply plugin: 'com.android.library'
+            lib.apply plugin: 'kotlin-android'
+            lib.apply plugin:  'kotlin-kapt'
+            lib.description "lib"
+            libDefaultConfig lib.android
+            libDependenciesConfig lib.dependencies
+    }
+    //module配置
+    moduleConfig = {
+        module ->
+            if (project.ext.isApplication) {
+                module.apply plugin: 'com.android.application'
+                module.description "app"
+            } else {
+                module.apply plugin: 'com.android.library'
+                module.description "lib"
+            }
+            module.apply plugin: 'kotlin-android'
+            module.apply plugin:  'kotlin-kapt'
+            moduleDefaultConfig module.android
+            dependenciesConfig module.dependencies
+    }
+
+    appDefaultConfig = {
+        extension ->
+            extension.compileSdkVersion androidConfig.compileSdkVersion
+            extension.buildToolsVersion androidConfig.buildToolsVersion
+
+            extension.defaultConfig {
+                applicationId androidConfig.applicationId
+                minSdkVersion androidConfig.minSdkVersion
+                targetSdkVersion androidConfig.targetSdkVersion
+                versionCode androidConfig.versionCode
+                versionName androidConfig.versionName
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+                extension.compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_1_8
+                    targetCompatibility JavaVersion.VERSION_1_8
+                }
+                extension.kotlinOptions {
+                    jvmTarget = JavaVersion.VERSION_1_8
+                }
+            }
+            kapt {
+                arguments {
+                    arg("AROUTER_MODULE_NAME", project.getName())
+                }
+            }
+    }
+
+    libDefaultConfig = {
+        extension ->
+            extension.compileSdkVersion androidConfig.compileSdkVersion
+            extension.buildToolsVersion androidConfig.buildToolsVersion
+            extension.defaultConfig {
+                minSdkVersion androidConfig.minSdkVersion
+                targetSdkVersion androidConfig.targetSdkVersion
+                versionCode androidConfig.versionCode
+                versionName androidConfig.versionName
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            }
+    }
+
+    moduleDefaultConfig = {
+        extension ->
+            extension.compileSdkVersion androidConfig.compileSdkVersion
+            extension.buildToolsVersion androidConfig.buildToolsVersion
+            extension.defaultConfig {
+                minSdkVersion androidConfig.minSdkVersion
+                targetSdkVersion androidConfig.targetSdkVersion
+                versionCode androidConfig.versionCode
+                versionName androidConfig.versionName
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            }
+            if (project.ext.isApplication) {
+                extension.compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_1_8
+                    targetCompatibility JavaVersion.VERSION_1_8
+                }
+                extension.kotlinOptions {
+                    jvmTarget = JavaVersion.VERSION_1_8
+                }
+            }
+            kapt {
+                arguments {
+                    arg("AROUTER_MODULE_NAME", project.getName())
+                }
+            }
+
+            extension.sourceSets {
+                main {
+                    if (project.ext.isApplication) {
+                        manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
+                    } else {
+                        manifest.srcFile 'src/main/AndroidManifest.xml'
+                    }
+                }
+            }
+    }
+
+    libDependenciesConfig = {
+        dependency ->
+            dependency.implementation fileTree(dir: 'libs', include: ['*.jar'])
+            dependency.testImplementation androidDeps.junit
+            dependency.androidTestImplementation androidDeps.junit_ext
+            dependency.androidTestImplementation androidDeps.espresso
+    }
+
+    dependenciesConfig = {
+        dependency ->
+            dependency.implementation fileTree(dir: 'libs', include: ['*.jar'])
+            dependency.kapt thirdDeps.arouter_compiler
+            dependency.implementation thirdDeps.arouter_api
+            dependency.testImplementation androidDeps.junit
+            dependency.androidTestImplementation androidDeps.junit_ext
+            dependency.androidTestImplementation androidDeps.espresso
+    }
+}
