@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_home"
+        android:title="@string/menu_home_title"
+        android:icon="@drawable/icon_home_wandroid"/>
+
+    <item
+        android:id="@+id/action_square"
+        android:title="@string/menu_square_title"
+        android:icon="@drawable/icon_square_wandroid"/>
+
+    <item
+        android:id="@+id/action_system"
+        android:title="@string/menu_system_title"
+        android:icon="@drawable/icon_system_wandroid"/>
+
+    <item
+        android:id="@+id/action_project"
+        android:title="@string/menu_project_title"
+        android:icon="@drawable/icon_project_wandroid"/>
+
+    <item
+        android:id="@+id/action_wechat"
+        android:title="@string/menu_wechat_title"
+        android:icon="@drawable/icon_wechat_wandroid"/>
+</menu>

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">WanDroid</string>
+    <!--- bottom navigation menu title -->
+    <string name="menu_home_title">Home</string>
+    <string name="menu_square_title">Square</string>
+    <string name="menu_system_title">System</string>
+    <string name="menu_project_title">Project</string>
+    <string name="menu_wechat_title">Wechat</string>
 </resources>

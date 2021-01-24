@@ -8,21 +8,17 @@ interface IVIewInit {
     /**
      * 在View前的初始化
      */
-    fun initBeforeView() : Unit
-    /**
-     * 获取布局ID
-     */
-    fun getContentId() : Int
+    fun initBefore() : Unit
     /**
      * 初始化View,绑定控件
      */
-    fun initView() : Unit
+    fun setupView() : Unit
     /**
      * 初始化数据
      */
-    fun initData() : Unit
+    fun setupData() : Unit
     /**
      * release resource
      */
-    fun release(): Unit
+    fun exitView(): Unit
 }
