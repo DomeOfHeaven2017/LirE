@@ -15,12 +15,6 @@ dependencies {
     implementation thirdDeps.base
     implementation project(':libres')
 
-    implementation androidDeps.constraintLayout
-    implementation androidDeps.swipeRefresh
-    implementation androidDeps.viewPager2
-
-    implementation androidDeps.navigation_fragment
-    implementation androidDeps.navigation_ui
-
-    implementation androidDeps.paging
+    implementation androidDeps.preference
+    implementation androidDeps.preference_ktx
 }

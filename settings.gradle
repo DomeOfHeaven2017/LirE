@@ -1,4 +1,4 @@
-include ':libcmm'
+include ':settings'
 include ':libres'
 include ':wandroid'
 include ':gank'

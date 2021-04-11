@@ -1,10 +1,8 @@
 package com.wx.lire.wandroid.debug
 
-import androidx.fragment.app.FragmentContainer
-import androidx.fragment.app.FragmentContainerView
-import com.wx.lire.libcmm.view.BaseActivity
 import com.wx.lire.wandroid.R
-import com.wx.lire.wandroid.ui.MainFragment
+import com.wx.lire.wandroid.MainFragment
+import com.wx.repos.base.view.BaseActivity
 
 /**
  * author: DomeOfHeaven

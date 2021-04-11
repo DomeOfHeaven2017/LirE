@@ -1,7 +1,7 @@
 package com.wx.lire.wandroid
 
 import android.app.Application
-import com.wx.lire.libcmm.application.IModuleApplication
+import com.wx.repos.base.application.IModuleApplication
 
 /**
  * author: DomeOfHeaven

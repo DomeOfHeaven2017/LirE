@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/title_general_settings">
+
+        <Preference
+            android:title="@string/title_standard_settings"
+            />
+
+        <Preference
+            android:title="@string/title_image_settings" />
+
+        <Preference
+            android:title="@string/title_video_settings" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/title_read_settings">
+
+        <Preference
+            android:title="@string/title_read_habit_settings" />
+
+        <Preference
+            android:title="@string/title_article_style_settings" />
+
+        <Preference
+            android:title="@string/title_layout_style_settings" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/title_other_settings">
+
+        <Preference
+            android:title="@string/title_about_settings" />
+
+        <Preference
+            android:title="@string/title_extra__settings" />
+    </PreferenceCategory>
+</PreferenceScreen>

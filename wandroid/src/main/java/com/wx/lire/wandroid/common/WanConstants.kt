@@ -7,5 +7,6 @@ package com.wx.lire.wandroid.common
  */
 object WanConstants {
 
+    const val WANDROID_BASE_URL = "www.wanandroid.com/"
 
 }

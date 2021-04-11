@@ -5,22 +5,22 @@
     app:startDestination="@id/action_home">
     <fragment
         android:id="@+id/action_home"
-        android:name="com.wx.lire.wandroid.ui.HomeFragment"
+        android:name="com.wx.lire.wandroid.home.ui.HomeFragment"
         android:label="HomeFragment" />
     <fragment
         android:id="@+id/action_project"
-        android:name="com.wx.lire.wandroid.ui.ProjectFragment"
+        android:name="com.wx.lire.wandroid.project.ui.ProjectFragment"
         android:label="ProjectFragment" />
     <fragment
         android:id="@+id/action_square"
-        android:name="com.wx.lire.wandroid.ui.SquareFragment"
+        android:name="com.wx.lire.wandroid.square.ui.SquareFragment"
         android:label="SquareFragment" />
     <fragment
         android:id="@+id/action_system"
-        android:name="com.wx.lire.wandroid.ui.SystemFragment"
+        android:name="com.wx.lire.wandroid.system.ui.SystemFragment"
         android:label="SystemFragment" />
     <fragment
         android:id="@+id/action_wechat"
-        android:name="com.wx.lire.wandroid.ui.WechatFragment"
+        android:name="com.wx.lire.wandroid.wechat.ui.WechatFragment"
         android:label="WechatFragment" />
 </navigation>

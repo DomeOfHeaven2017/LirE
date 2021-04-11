@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_general_settings">常规设置</string>
+    <string name="title_standard_settings">基础设置</string>
+    <string name="title_language_set">语言</string>
+    <string name="title_screen_direction_set">屏幕方向</string>
+    <string name="title_app_icon">应用图标</string>
+    <string name="title_data_cache">缓存</string>
+    <string name="title_image_settings">图片设置</string>
+    <string name="title_video_settings">视频设置</string>
+
+    <string name="title_read_settings">阅读设置</string>
+    <string name="title_read_habit_settings">阅读习惯</string>
+    <string name="title_article_style_settings">文章样式</string>
+    <string name="title_layout_style_settings">布局样式</string>
+
+    <string name="title_other_settings">其它</string>
+    <string name="title_about_settings">关于</string>
+    <string name="title_update_set">检查更新</string>
+    <string name="title_version_info_set">版本信息</string>
+    <string name="title_extra__settings">额外</string>
+    <string name="title_user_manual_set">用户手册</string>
+    <string name="title_open_source_set">开源许可</string>
+    <string name="title_privacy_policy_set">隐私政策</string>
+    <string name="title_feedback_set">反馈</string>
+</resources>
